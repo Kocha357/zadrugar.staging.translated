@@ -1,0 +1,1464 @@
+html {
+  scroll-behavior: smooth;
+}
+h1 {
+  font-family: "Arvo", serif;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: rgb(252, 240, 240);
+}
+* {
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Change the background color of the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: rgb(252, 240, 240);
+}
+
+/* Change the color of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(42, 41, 41);
+  border-radius: 10px;
+}
+
+/* Change the color of the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+#header-section {
+  width: 100%;
+  height: 100vh;
+  background-image: url("Images/landing-page/heade-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#loader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background-color: rgb(79, 78, 78);
+}
+#loader > img {
+  width: 40px;
+}
+#loader > p {
+  padding: 0;
+  margin-top: 0;
+  color: rgb(212, 209, 209);
+}
+#navigation {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 2;
+  transition: height 0.3s ease-in-out;
+}
+#navigation.navigation-on-scroll {
+  background-color: rgb(34, 34, 34);
+  height: 60px;
+}
+@media only screen and (max-width: 540px) {
+  .mobile-nav {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(212, 209, 209);
+    position: relative;
+    z-index: 5;
+  }
+  .hidden {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(227, 224, 224);
+    z-index: 5;
+    padding: 20px;
+    transform: translateY(-200%);
+    transition: transform 1s ease-in-out;
+  }
+  .hidden.nav-content {
+    transform: translateY(0%);
+    position: fixed;
+  }
+  .hidden > img {
+    width: 60px;
+  }
+  .hidden button {
+    width: 60px;
+    border: none;
+    background-color: rgb(227, 224, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hidden button:active {
+    transform: scale(0.97);
+  }
+  #close-nav {
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(107, 104, 104);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: rgb(227, 224, 224);
+    margin-top: 20px;
+  }
+  #close-nav:active {
+    transform: scale(0.97);
+  }
+  .nav-links {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-links > a {
+    text-decoration: none;
+    color: rgba(53, 52, 52, 0.749);
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+  }
+  .nav-links-desktop {
+    display: none;
+  }
+  .logo-desktop {
+    display: none;
+  }
+  .nav-links > a.active {
+    color: rgb(26, 26, 26);
+    border-bottom: 1px solid rgb(26, 26, 26);
+    transform: scale(1.08);
+  }
+
+  #serbian-lang img {
+    width: 100%;
+  }
+  #english-lang img {
+    width: 100%;
+  }
+  #heading-wrapper {
+    font-size: 20px;
+    width: 100%;
+    padding: 20px;
+    color: rgb(227, 224, 224);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  #heading-wrapper > p {
+    font-size: 18px;
+  }
+  .logo {
+    width: 70px;
+  }
+  .heading-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin-top: 50px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .heading-btn:active {
+    transform: scale(0.97);
+  }
+
+  #header-section::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.2;
+  }
+
+  /*ABOUT SCTION*/
+  #about-section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .text-wrapper > h2 {
+    text-align: center;
+  }
+  .know-us {
+    margin-top: 70px;
+  }
+  .text-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .text-wrapper {
+    font-size: 16px;
+    color: rgb(30, 28, 28);
+  }
+  .storage {
+    margin-top: 20px;
+  }
+  .box > img {
+    width: 80px;
+  }
+  .box > h3 {
+    margin-top: 30px;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 35px;
+  }
+  .box {
+    margin-top: 20px;
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  /*RASPBERRY SECTION*/
+  #raspberries-section {
+    margin-top: 30px;
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .hidden-rasp-image {
+    display: none;
+  }
+  .raspberry-text-wrapper {
+    background: url("Images/landing-page/raspberry-section.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-self: center;
+    width: 100%;
+    padding: 0 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(212, 209, 209);
+    position: relative;
+    z-index: 1;
+  }
+  .raspberry-text-wrapper::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.45;
+    z-index: -2;
+  }
+  .raspberry-text-wrapper > h2 {
+    padding-top: 20px;
+    color: #e30b5ae3;
+    margin: 30px 0 0 0;
+  }
+  .raspberry-photo-wrapper {
+    display: none;
+  }
+  .raspberry-larger-photo {
+    display: none;
+  }
+  .raspberry-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #e30b5aaa;
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .raspberry-btn:active {
+    transform: scale(0.97);
+  }
+  .rasp-contact {
+    text-decoration: none;
+    color: #e30b5ae3;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  /*BLACKBERRY SECTION*/
+  #blackberries-section {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+  #blackberries-section > h2 {
+    padding-top: 20px;
+    color: #2e2848;
+    margin: 30px 0 0 0;
+  }
+  .bb-second-h2 {
+    display: none;
+  }
+  .blackberry-photo-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 20px;
+    color: rgb(30, 28, 28);
+  }
+  .blackberry-photo-wrapper > img {
+    width: 240px;
+  }
+  .blackberry-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #2e2848d7;
+    border: 1px solid #2e2848d7;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .blackberry-btn:active {
+    transform: scale(0.97);
+  }
+  /*PHARMACY SECTIOn*/
+  #pharmacy-section {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+  .pharmacy-photo-wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+  .pharmacy-photo-wrapper > img {
+    width: 100px;
+    filter: drop-shadow(12px 25px 28px #7f7e7e);
+    float: right;
+    padding-left: 5px;
+  }
+  #pharmacy-section > h2 {
+    text-align: center;
+    padding-top: 20px;
+    color: rgba(23, 128, 23, 0.826);
+    margin: 30px 0 0 0;
+  }
+  .ap-second-h2 {
+    display: none;
+  }
+
+  .pharmacy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(23, 128, 23, 0.826);
+    border: 1px solid rgba(23, 128, 23, 0.826);
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .pharmacy-btn:active {
+    transform: scale(0.97);
+  }
+  .pharmacy-photo-wrapper > p {
+    margin-top: 0;
+  }
+  /*CONTACT SECTION*/
+  #contact-section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 60px;
+  }
+  #map {
+    width: 100%;
+    height: 600px;
+  }
+  iframe {
+    width: 100%;
+    height: 600px;
+  }
+  #contact-info {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(190, 189, 189);
+    font-size: 16px;
+  }
+  #contact-info > h2 {
+    margin-bottom: 0;
+  }
+  .substring {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  footer {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(57, 57, 57);
+    color: rgb(190, 189, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  #insta-icon {
+    font-size: 40px;
+    color: rgb(190, 189, 189);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+  #insta-icon p {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0;
+  }
+  .email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin: 30px 0 30px 0;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .email-btn:active {
+    transform: scale(0.97);
+  }
+}
+/*TABLET SCREEN SIZE*/
+@media only screen and (min-width: 540px) and (max-width: 950px) {
+  .mobile-nav {
+    width: 90px;
+    height: 90px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(212, 209, 209);
+    position: relative;
+    z-index: 5;
+  }
+  .hidden {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(227, 224, 224);
+    z-index: 5;
+    padding: 20px;
+    transform: translateY(-200%);
+    transition: transform 0.5s ease-in-out;
+  }
+  .hidden.nav-content {
+    transform: translateY(0%);
+    position: fixed;
+  }
+  .hidden > img {
+    width: 50px;
+  }
+  .hidden button {
+    width: 50px;
+    border: none;
+    background-color: rgb(227, 224, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hidden button:active {
+    transform: scale(0.97);
+  }
+  #close-nav {
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: rgb(107, 104, 104);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(227, 224, 224);
+  }
+  #close-nav:active {
+    transform: scale(0.97);
+  }
+  .nav-links {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .nav-links-desktop {
+    display: none;
+  }
+  .logo-desktop {
+    display: none;
+  }
+  .nav-links > a {
+    text-decoration: none;
+    color: rgba(53, 52, 52, 0.749);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+  }
+  .nav-links > a.active {
+    color: rgb(26, 26, 26);
+    border-bottom: 1px solid rgb(26, 26, 26);
+    transform: scale(1.08);
+  }
+
+  #serbian-lang img {
+    width: 100%;
+  }
+  #english-lang img {
+    width: 100%;
+  }
+  #heading-wrapper {
+    font-size: 20px;
+    width: 100%;
+    padding: 20px;
+    color: rgb(227, 224, 224);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  #heading-wrapper > p {
+    font-size: 18px;
+  }
+  .logo {
+    width: 50px;
+  }
+  .heading-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .heading-btn:active {
+    transform: scale(0.9);
+  }
+
+  #header-section::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.2;
+  }
+
+  /*ABOUT SCTION*/
+  #about-section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .text-wrapper > h2 {
+    text-align: center;
+  }
+  .know-us {
+    margin-top: 70px;
+  }
+  .text-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .text-wrapper {
+    font-size: 16px;
+    color: rgb(30, 28, 28);
+  }
+  .storage {
+    margin-top: 20px;
+  }
+  .box > img {
+    width: 100px;
+  }
+  .box > h3 {
+    margin-top: 30px;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 35px;
+  }
+  .box {
+    margin-top: 20px;
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  /*RASPBERRY SECTION*/
+  #raspberries-section {
+    margin-top: 30px;
+    width: 100%;
+    font-size: 16px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 1px solid rgb(30, 28, 28);
+    border-bottom: 1px solid rgb(30, 28, 28);
+  }
+
+  .raspberry-text-wrapper {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+    padding: 0 10px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(30, 28, 28);
+    position: relative;
+    z-index: 1;
+    float: left;
+  }
+  .raspberry-photo-wrapper {
+    width: 50%;
+    overflow: hidden;
+  }
+  .raspberry-larger-photo {
+    display: none;
+  }
+  .hidden-rasp-image {
+    height: 100%;
+    margin: 0;
+  }
+
+  .raspberry-text-wrapper > h2 {
+    padding-top: 10px;
+    color: #e30b5ae3;
+    margin: 30px 0 0 0;
+  }
+  .raspberry-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #e30b5aaa;
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .raspberry-btn:active {
+    transform: scale(0.97);
+  }
+  .rasp-contact {
+    text-decoration: none;
+    color: #e30b5ae3;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  /*BLACKBERRY SECTION*/
+  #blackberries-section {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    background: url("Images/landing-page/blackberries-section-main.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  #blackberries-section::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+  }
+  #blackberries-section > h2 {
+    padding-top: 20px;
+    color: rgb(227, 224, 224);
+    margin: 30px 0 0 0;
+    z-index: 1;
+  }
+  .bb-second-h2 {
+    display: none;
+  }
+  .blackberry-photo-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: rgb(227, 224, 224);
+    z-index: 1;
+  }
+  .blackberry-photo-wrapper > img {
+    display: none;
+  }
+
+  .blackberry-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #2e2848d7;
+    border: 1px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .blackberry-btn:active {
+    transform: scale(0.97);
+  }
+  /*PHARMACY SECTIOn*/
+  #pharmacy-section {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+  .pharmacy-photo-wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+  .pharmacy-photo-wrapper > img {
+    width: 35%;
+    filter: drop-shadow(12px 25px 28px #7f7e7e);
+    float: left;
+    padding: 0 20px 20px 0;
+  }
+  .pharmacy-photo-wrapper > p {
+    align-self: center;
+    padding-top: 20px;
+  }
+  #pharmacy-section > h2 {
+    text-align: center;
+    padding-top: 20px;
+    color: rgba(23, 128, 23, 0.826);
+    margin: 30px 0 0 0;
+  }
+  .ap-second-h2 {
+    display: none;
+  }
+  .pharmacy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(23, 128, 23, 0.826);
+    border: 1px solid rgba(23, 128, 23, 0.826);
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .pharmacy-btn:active {
+    transform: scale(0.97);
+  }
+  .pharmacy-photo-wrapper > p {
+    margin-top: 0;
+  }
+  /*CONTACT SECTION*/
+  #contact-section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 60px;
+  }
+  #map {
+    width: 100%;
+    height: 600px;
+  }
+  iframe {
+    width: 100%;
+    height: 600px;
+  }
+  #contact-info {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(190, 189, 189);
+    font-size: 16px;
+  }
+  #contact-info > h2 {
+    margin-bottom: 0;
+  }
+  .substring {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  footer {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(57, 57, 57);
+    color: rgb(190, 189, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  #insta-icon {
+    font-size: 40px;
+    color: rgb(190, 189, 189);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+  #insta-icon p {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0;
+  }
+  .email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin: 30px 0 30px 0;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .email-btn:active {
+    transform: scale(0.97);
+  }
+}
+/*DESKTOP SCREEN SIZE*/
+@media only screen and (min-width: 950px) {
+  .mobile-nav {
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: rgb(212, 209, 209);
+    position: relative;
+    z-index: 5;
+  }
+  .hidden {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(227, 224, 224);
+    z-index: 5;
+    padding: 20px;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+  .nav-links-desktop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+  }
+  .nav-links-desktop a {
+    text-decoration: none;
+    margin: 0 0 0 40px;
+    color: rgb(227, 224, 224);
+    font-size: 16px;
+  }
+  .nav-links-desktop button {
+    width: 30px;
+    margin-left: 20px;
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-links-desktop button:active {
+    transform: scale(0.97);
+  }
+  #serbian-lang-desktop > img {
+    width: 100%;
+  }
+  #english-lang-desktop > img {
+    width: 100%;
+  }
+  .hidden.nav-content {
+    transform: translateY(0%);
+    position: fixed;
+  }
+  .hidden > img {
+    width: 100px;
+  }
+  .hidden button {
+    width: 80px;
+    border: none;
+    background-color: rgb(227, 224, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hidden button:active {
+    transform: scale(0.97);
+  }
+  #close-nav {
+    color: black;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: rgb(107, 104, 104);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: rgb(227, 224, 224);
+  }
+  #close-nav:active {
+    transform: scale(0.97);
+  }
+  .nav-links {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-links > a {
+    text-decoration: none;
+    color: rgba(53, 52, 52, 0.749);
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+  }
+  .nav-links > a.active {
+    color: rgb(26, 26, 26);
+    border-bottom: 1px solid rgb(26, 26, 26);
+    transform: scale(1.08);
+  }
+  .nav-links-desktop > a.activeDesktop {
+    color: white;
+    transform: scale(1.1);
+    border-bottom: 1px solid rgb(227, 224, 224);
+  }
+  .nav-links-desktop > a:hover {
+    color: white;
+    transform: scale(1.1);
+  }
+  #serbian-lang img {
+    width: 100%;
+  }
+  #english-lang img {
+    width: 100%;
+  }
+  #heading-wrapper {
+    font-size: 16px;
+    width: 100%;
+    padding: 20px;
+    color: rgb(227, 224, 224);
+    position: relative;
+    z-index: 1;
+  }
+  #heading-wrapper > h1 {
+    font-size: 40px;
+  }
+  #heading-wrapper > p {
+    font-size: 18px;
+  }
+  .logo {
+    display: none;
+    width: 70px;
+  }
+  .logoDesktop {
+    width: 60px;
+    padding: 0 0 0 20px;
+  }
+  .heading-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin-top: 50px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .heading-btn:hover {
+    background-color: rgba(27, 27, 27, 0.884);
+  }
+  .heading-btn:active {
+    transform: scale(0.97);
+  }
+
+  #header-section::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.2;
+  }
+
+  /*ABOUT SCTION*/
+  #about-section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .know-us {
+    width: 100%;
+  }
+  .text-container {
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    margin-top: 30px;
+  }
+  .text-wrapper {
+    width: 50%;
+    font-size: 16px;
+    color: rgb(30, 28, 28);
+    margin-bottom: 30px;
+  }
+  .text-wrapper:first-child {
+    border-right: 1px solid black;
+    padding: 20px 20px 0 0;
+  }
+  .text-wrapper:nth-child(2) {
+    padding: 20px 0 0 20px;
+  }
+  .storage {
+    width: 100%;
+  }
+  .box > img {
+    width: 60px;
+  }
+  .box > h3 {
+    margin-top: 30px;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .box {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 30px;
+  }
+  /*RASPBERRY SECTION*/
+  #raspberries-section {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .raspberry-text-wrapper {
+    align-self: center;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    color: rgb(30, 28, 28);
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    padding: 0 20px 0 20px;
+  }
+  .raspberry-photo-wrapper {
+    display: none;
+  }
+  .raspberry-larger-photo {
+    width: 50%;
+  }
+  .raspberry-larger-photo > img {
+    width: 100%;
+  }
+  .raspberry-text-wrapper > h2 {
+    padding-top: 20px;
+    color: #e30b5ae3;
+    margin: 30px 0 0 0;
+  }
+  .raspberry-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #e30b5aaa;
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .raspberry-btn:hover {
+    background-color: #e30b5ae8;
+  }
+  .raspberry-btn:active {
+    transform: scale(0.97);
+  }
+  .rasp-contact {
+    text-decoration: none;
+    color: #e30b5ae3;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .rasp-contact:hover {
+    text-decoration: underline;
+  }
+  /*BLACKBERRY SECTION*/
+  #blackberries-section {
+    width: 100%;
+    padding-top: 50px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #blackberries-section > h2 {
+    color: #2e2848;
+  }
+  .bb-first-h2 {
+    display: none;
+  }
+
+  .blackberry-photo-wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(30, 28, 28);
+  }
+  .rasp-text-button {
+    width: 50%;
+    padding: 20px;
+  }
+  .blackberry-photo-wrapper > img {
+    width: 50%;
+    padding: 20px 0 20px 20px;
+  }
+  .blackberry-photo-wrapper > p {
+    padding: 20px;
+    width: 50%;
+  }
+  .blackberry-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #2e2848d7;
+    border: 1px solid #2e2848d7;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .blackberry-btn:hover {
+    background-color: #2e2848;
+  }
+  .blackberry-btn:active {
+    transform: scale(0.97);
+  }
+  /*PHARMACY SECTIOn*/
+  #pharmacy-section {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding-top: 50px;
+  }
+  .pharmacy-photo-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+  .pharm-text-and-btn {
+    width: 50%;
+  }
+  .pharmacy-photo-wrapper > img {
+    padding: 20px;
+    width: 20%;
+    filter: drop-shadow(12px 25px 28px #7f7e7e);
+  }
+  #pharmacy-section > h2 {
+    text-align: center;
+    padding-top: 20px;
+    color: rgba(23, 128, 23, 0.826);
+    margin: 30px 0 0 0;
+  }
+  .ap-first-h2 {
+    display: none;
+  }
+  .ap-second-h2 {
+    color: rgba(23, 128, 23, 0.826);
+  }
+  .pharmacy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(23, 128, 23, 0.826);
+    border: 1px solid rgba(23, 128, 23, 0.826);
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .pharmacy-btn:active {
+    transform: scale(0.97);
+  }
+  .pharmacy-btn:hover {
+    background-color: rgb(23, 128, 23);
+  }
+  .pharmacy-photo-wrapper > p {
+    margin-top: 0;
+  }
+  /*CONTACT SECTION*/
+  #contact-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding-top: 60px;
+  }
+  #map {
+    width: 100%;
+    height: 100vh;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  #contact-info {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(190, 189, 189);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #contact-info > h2 {
+    margin-bottom: 0;
+  }
+  .substring {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  footer {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(57, 57, 57);
+    color: rgb(190, 189, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  #insta-icon {
+    font-size: 40px;
+    color: rgb(190, 189, 189);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+  #insta-icon p {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0;
+  }
+  .email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin: 30px 0 30px 0;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .email-btn:active {
+    transform: scale(0.97);
+  }
+}

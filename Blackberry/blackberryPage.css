@@ -1,0 +1,931 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: rgb(252, 240, 240);
+}
+* {
+  box-sizing: border-box;
+}
+h1 {
+  font-family: "Arvo", serif;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Change the background color of the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: rgb(252, 240, 240);
+}
+
+/* Change the color of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(42, 41, 41);
+  border-radius: 10px;
+}
+
+/* Change the color of the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+#loader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background-color: rgb(79, 78, 78);
+}
+#loader > img {
+  width: 40px;
+}
+#loader > p {
+  padding: 0;
+  margin-top: 0;
+  color: rgb(212, 209, 209);
+}
+@media only screen and (max-width: 480px) {
+  #about-blackberries {
+    width: 100%;
+  }
+  .blackberry-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .blackberry-nav > a {
+    padding: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(53, 52, 52, 0.749);
+  }
+  /*SLIDER SECTION*/
+  #blackberry-images-slider {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: rgba(25, 25, 25, 0.731);
+  }
+
+  .slide {
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    align-self: centr;
+    width: auto;
+    padding: 0 20px 0 20px;
+    margin: -22px 20px 0 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(53, 52, 52, 0.571);
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  h1 {
+    text-align: center;
+  }
+  /*SLIDER BOXES*/
+  .box1 {
+    width: 250px;
+    height: 400px;
+  }
+  .box2 {
+    width: 100%;
+  }
+  .box3 {
+    width: 250px;
+  }
+  .box4 {
+    width: 90%;
+  }
+  .box5 {
+    width: 250px;
+  }
+  .box6 {
+    width: 250px;
+  }
+  .box7 {
+    width: 100%;
+  }
+
+  .blackberry-definition {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+  }
+  .blackberry-definition a {
+    text-decoration: none;
+    color: #433a68;
+  }
+  #blackberry-contact {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  #contact-info {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(190, 189, 189);
+    font-size: 16px;
+  }
+  #contact-info > h2 {
+    margin-bottom: 0;
+  }
+  .substring {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  footer {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(57, 57, 57);
+    color: rgb(190, 189, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  #insta-icon {
+    font-size: 40px;
+    color: rgb(190, 189, 189);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+  #insta-icon p {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0;
+  }
+  .email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin: 30px 0 30px 0;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .email-btn:active {
+    transform: scale(0.97);
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 540px) {
+  #about-blackberries {
+    width: 100%;
+  }
+  .blackberry-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .blackberry-nav > a {
+    padding: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(53, 52, 52, 0.749);
+  }
+  /*SLIDER SECTION*/
+  #blackberry-images-slider {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: rgba(25, 25, 25, 0.731);
+  }
+
+  .slide {
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    align-self: centr;
+    width: auto;
+    padding: 0 20px 0 20px;
+    margin: -22px 20px 0 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(53, 52, 52, 0.571);
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  h1 {
+    text-align: center;
+  }
+  /*SLIDER BOXES*/
+  .box1 {
+    width: 250px;
+    height: 400px;
+  }
+  .box2 {
+    width: 100%;
+  }
+  .box3 {
+    width: 300px;
+  }
+  .box4 {
+    width: 90%;
+  }
+  .box5 {
+    width: 300px;
+  }
+  .box6 {
+    width: 250px;
+  }
+  .box7 {
+    width: 70%;
+  }
+
+  .blackberry-definition {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+  }
+  .blackberry-definition a {
+    text-decoration: none;
+    color: #e30b5ae3;
+  }
+  #blackberry-contact {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  #contact-info {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(190, 189, 189);
+    font-size: 16px;
+  }
+  #contact-info > h2 {
+    margin-bottom: 0;
+  }
+  .substring {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  footer {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(57, 57, 57);
+    color: rgb(190, 189, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  #insta-icon {
+    font-size: 40px;
+    color: rgb(190, 189, 189);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+  #insta-icon p {
+    font-size: 18px;
+    padding: 5px;
+    margin: 0;
+  }
+  .email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin: 30px 0 30px 0;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .email-btn:active {
+    transform: scale(0.97);
+  }
+}
+@media only screen and (min-width: 540px) and (max-width: 820px) {
+  #about-blackberries {
+    width: 100%;
+  }
+  .blackberry-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .blackberry-nav > a {
+    padding: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(53, 52, 52, 0.749);
+  }
+  /*SLIDER SECTION*/
+  #blackberry-images-slider {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: rgba(25, 25, 25, 0.731);
+  }
+
+  .slide {
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    align-self: centr;
+    width: auto;
+    padding: 0 20px 0 20px;
+    margin: -22px 20px 0 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(53, 52, 52, 0.571);
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  h1 {
+    text-align: center;
+  }
+  /*SLIDER BOXES*/
+  .box1 {
+    width: 250px;
+    height: 400px;
+  }
+  .box2 {
+    width: 100%;
+  }
+  .box3 {
+    width: 50%;
+  }
+  .box4 {
+    width: 80%;
+  }
+  .box5 {
+    width: 45%;
+  }
+  .box6 {
+    width: 45%;
+  }
+  .box7 {
+    width: 60%;
+  }
+
+  .blackberry-definition {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+  }
+  .blackberry-definition a {
+    text-decoration: none;
+    color: #e30b5ae3;
+  }
+  #blackberry-contact {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  #contact-info {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(190, 189, 189);
+    font-size: 16px;
+  }
+  #contact-info > h2 {
+    margin-bottom: 0;
+  }
+  .substring {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  footer {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(57, 57, 57);
+    color: rgb(190, 189, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  #insta-icon {
+    font-size: 40px;
+    color: rgb(190, 189, 189);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+  #insta-icon p {
+    font-size: 18px;
+    padding: 5px;
+    margin: 0;
+  }
+  .email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin: 30px 0 30px 0;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .email-btn:active {
+    transform: scale(0.97);
+  }
+}
+@media only screen and (min-width: 820px) and (max-width: 1024px) {
+  #about-blackberries {
+    width: 100%;
+  }
+  .blackberry-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .blackberry-nav > a {
+    padding: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(53, 52, 52, 0.749);
+  }
+  /*SLIDER SECTION*/
+  #blackberry-images-slider {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: rgba(25, 25, 25, 0.731);
+  }
+
+  .slide {
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    align-self: centr;
+    width: auto;
+    padding: 0 20px 0 20px;
+    margin: -22px 20px 0 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(53, 52, 52, 0.571);
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  h1 {
+    text-align: center;
+  }
+  /*SLIDER BOXES*/
+  .box1 {
+    width: 250px;
+    height: 400px;
+  }
+  .box2 {
+    width: 100%;
+  }
+  .box3 {
+    width: 50%;
+  }
+  .box4 {
+    width: 80%;
+  }
+  .box5 {
+    width: 300px;
+  }
+  .box6 {
+    width: 250px;
+  }
+  .box7 {
+    width: 60%;
+  }
+
+  .blackberry-definition {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+  }
+  .blackberry-definition a {
+    text-decoration: none;
+    color: #e30b5ae3;
+  }
+  #blackberry-contact {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  #contact-info {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(190, 189, 189);
+    font-size: 16px;
+  }
+  #contact-info > h2 {
+    margin-bottom: 0;
+  }
+  .substring {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  footer {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(57, 57, 57);
+    color: rgb(190, 189, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  #insta-icon {
+    font-size: 40px;
+    color: rgb(190, 189, 189);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+  #insta-icon p {
+    font-size: 18px;
+    padding: 5px;
+    margin: 0;
+  }
+  .email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin: 30px 0 30px 0;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .email-btn:active {
+    transform: scale(0.97);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #about-blackberries {
+    width: 100%;
+  }
+  .blackberry-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .blackberry-nav > a {
+    padding: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(53, 52, 52, 0.749);
+  }
+  /*SLIDER SECTION*/
+  #blackberry-images-slider {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: rgba(25, 25, 25, 0.731);
+  }
+
+  .slide {
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    align-self: centr;
+    width: auto;
+    padding: 0 20px 0 20px;
+    margin: -22px 20px 0 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(53, 52, 52, 0.571);
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  h1 {
+    text-align: center;
+  }
+  /*SLIDER BOXES*/
+  .box1 {
+    width: 250px;
+    height: 400px;
+  }
+  .box2 {
+    width: 100%;
+  }
+  .box3 {
+    width: 350px;
+  }
+  .box4 {
+    width: 450px;
+  }
+  .box5 {
+    width: 350px;
+  }
+  .box6 {
+    width: 350px;
+  }
+  .box7 {
+    width: 400px;
+  }
+
+  .blackberry-definition {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+  }
+  .blackberry-definition a {
+    text-decoration: none;
+    color: #e30b5ae3;
+  }
+  #blackberry-contact {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  #contact-info {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(190, 189, 189);
+    font-size: 16px;
+  }
+  #contact-info > h2 {
+    margin-bottom: 0;
+  }
+  .substring {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  footer {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(57, 57, 57);
+    color: rgb(190, 189, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+  #insta-icon {
+    font-size: 40px;
+    color: rgb(190, 189, 189);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+  #insta-icon p {
+    font-size: 16px;
+    padding: 5px;
+    margin: 0;
+  }
+  .email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.562);
+    border: 2px solid rgb(227, 224, 224);
+    font-size: 16px;
+    margin: 30px 0 30px 0;
+    text-decoration: none;
+    color: rgb(227, 224, 224);
+  }
+  .email-btn:active {
+    transform: scale(0.97);
+  }
+}
