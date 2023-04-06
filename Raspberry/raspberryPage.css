@@ -13,6 +13,12 @@ body {
 h1 {
   font-family: "Arvo", serif;
 }
+.griz {
+  color: rgb(252, 240, 240);
+  font-size: 20px;
+  position: absolute;
+  top: 440px;
+}
 ::-webkit-scrollbar {
   width: 5px;
 }

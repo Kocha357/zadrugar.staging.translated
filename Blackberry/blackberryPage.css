@@ -156,6 +156,12 @@ h1 {
   .box7 {
     width: 100%;
   }
+  .box8 {
+    width: 100%;
+  }
+  .box9 {
+    width: 100%;
+  }
 
   .blackberry-definition {
     width: 100%;
@@ -331,7 +337,12 @@ h1 {
   .box7 {
     width: 70%;
   }
-
+  .box8 {
+    width: 40%;
+  }
+  .box9 {
+    width: 70%;
+  }
   .blackberry-definition {
     width: 100%;
     font-size: 16px;
@@ -505,6 +516,12 @@ h1 {
   }
   .box7 {
     width: 60%;
+  }
+  .box8 {
+    width: 40%;
+  }
+  .box9 {
+    width: 70%;
   }
 
   .blackberry-definition {
@@ -681,7 +698,12 @@ h1 {
   .box7 {
     width: 60%;
   }
-
+  .box8 {
+    width: 40%;
+  }
+  .box9 {
+    width: 50%;
+  }
   .blackberry-definition {
     width: 100%;
     font-size: 16px;
@@ -856,7 +878,12 @@ h1 {
   .box7 {
     width: 400px;
   }
-
+  .box8 {
+    width: 40%;
+  }
+  .box9 {
+    width: 50%;
+  }
   .blackberry-definition {
     width: 100%;
     font-size: 16px;
